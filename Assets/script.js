@@ -3,6 +3,7 @@ let highScores = document.getElementById("high-scores");
 
 // Timer div
 let timer = document.getElementById("timer");
+
 const questions = [
   {
     question: 'What is the power level of Goku?',
