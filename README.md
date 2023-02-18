@@ -8,6 +8,7 @@
 
 ## Screenshot
 
+![screenshot](./Assets/quizScreenshot.png)
 
 ## Author
 

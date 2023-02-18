@@ -54,14 +54,15 @@ startButton.addEventListener("click", startQuiz);
 answerButtons.addEventListener("click", selectAnswer);
 
 // Add an event listener to the submit button
-submitButton.addEventListener("click", saveScores);
+submitButton.addEventListener("click", submitScore);
 
 // Add an event listener to the high scores button
 document.getElementById("highscores-button").addEventListener("click", viewHighScores);
 
 // function to display scores in list
 function displayScores() {
-  scoresList.innerHTML = "";
+  // scoresList.innerHTML = "";
+  console.log(score)
   scores.forEach((score) => {
     const li = document.createElement("li");
     li.textContent = `${score.initials}: ${score.score}`;
@@ -72,6 +73,7 @@ function displayScores() {
 // function to save scores to local storage and display them
 function saveScores() {
   localStorage.setItem("scores", JSON.stringify(scores));
+  console.log(scores)
   displayScores();
 }
 
@@ -88,6 +90,7 @@ function submitScore(event) {
   };
   scores.push(newScore);
   saveScores();
+  
   highscoresDiv.classList.remove("hide");
   endContainer.classList.add("hide");
 }
@@ -95,6 +98,7 @@ function submitScore(event) {
 // function to handle clicking the high scores link
 function viewHighScores() {
   displayScores();
+  console.log(scores)
   quizContainer.classList.add("hide");
   endContainer.classList.add("hide");
   highscoresDiv.classList.remove("hide");
