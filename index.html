@@ -1,47 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"  href="Assets/style.css" />  
-    
-    <title>Study Guide Quiz</title>
+    <title>Study Guide</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-     <!--Possible new start button  -->
-    <div></div>
-    <!-- Div to hold our link to high scores -->
-    <div id="high-scores"> </div>
-    <!-- Div to hold our timer -->
-    <div id="timer"></div>
-    <!-- Wrapper div to hold the rest of the content on our screen -->
-
-    <!-- Possible info or instruction box -->
-    <div></div>
-
-    <div class="container">
-      <!-- Div for the questions, possibly change to example quiz box styling -->
-      <div id="question-container" class="hide">
-        <div id="question">Question</div>
-        <div id="answer-btn" class="btn-grid">
-          <button class="btn">Answer 1</button>
-          <button class="btn">Answer 2</button>
-          <button class="btn">Answer 3</button>
-          <button class="btn">Answer 4</button>
-        </div>
-      </div>
-      <!-- possibly change to Quit and Restart -->
-      <div class="controls">
-        <button id="start-btn" class="start-btn btn">Start</button>
-        <button id="next-btn" class="next-btn btn hide">Next</button>
-      </div>
-      <!-- Div for the end screen -->
-      <div id="end-screen"></div>
-      <!-- Div to dynamically display feedback to the user -->
+    <div id="start-container">
+      <h1>Welcome to the Quiz</h1>
+      <button id="start-button" class="btn">Start</button>
+      <button id="highscores-button" class="btn">High Scores</button>
     </div>
-    
-    
-    <script src="Assets/script.js"></script>
+
+    <div id="quiz-container" class="hide">
+      <div id="timer"></div>
+      <div id="question-container">
+        <div id="question"></div>
+        <div id="answer-buttons"></div>
+      </div>
+    </div>
+
+    <div id="end-container" class="hide">
+      <h2>All done!</h2>
+      <p>Your final score is <span id="final-score"></span>.</p>
+      <form id="score-form">
+        <label for="initials">Enter initials:</label>
+        <input type="text" id="initials" name="initials" maxlength="3" />
+        <button type="submit" id="submit-button" class="btn">Submit</button>
+      </form>
+    </div>
+
+    <div class="highscores hide">
+      <h2>High Scores</h2>
+      <ul id="scores-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
